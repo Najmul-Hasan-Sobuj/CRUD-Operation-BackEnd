@@ -1,9 +1,7 @@
 @extends('layouts.master')
 @section('content')
         <div class="card-body">
-            @if(Session::has('msg'))
-            <p class="alert alert-info">{{ Session('msg') }}</p>
-            @endif
+            {{-- error message --}}
             <form id="storeForm" action="{{ route('candidate.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-4">

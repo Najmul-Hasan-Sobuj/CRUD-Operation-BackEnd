@@ -68,10 +68,11 @@ class CandidateController extends Controller
                    'description' => $request->description,
                    'image'       => $globalFunImg['filaName'],
                ]);
-               Toastr::success('Post added successfully :)','Success');
-               return redirect()->back()->with('msg','data submit successfully');  
+               Toastr::success('Post added successfully');
+               return redirect()->back();  
            }else {
-            return redirect()->back()->with('msg','File extention not matching, please try jpeg or jpg or png extension');  
+               Toastr::warning('File extention not matching');
+                return redirect()->back();
            }
         }else {
             return redirect()->back()->withErrors($validation);
@@ -147,13 +148,16 @@ class CandidateController extends Controller
 
                     $insertData['image'] = $globalFunImg['filaName'];
                     $candidateInfo->update($insertData);
-                    return redirect()->back()->with('msg','data submit successfully'); 
+                    Toastr::success('Post added successfully');
+                    return redirect()->back(); 
                 } else {
-                    return redirect()->back()->with('msg','File extention not matching, please try jpeg or jpg or png extension');  
+                    Toastr::warning('File extention not matching');
+                    return redirect()->back();  
                }
             } else {
                 $candidateInfo->update($insertData);
-                return redirect()->back()->with('msg','data submit successfully');
+                Toastr::success('Post added successfully');
+                return redirect()->back(); 
             }
             
         }else {
