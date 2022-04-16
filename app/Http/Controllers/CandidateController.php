@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Helper;
 use App\Models\Candidate;
 use Illuminate\Http\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
@@ -67,6 +68,7 @@ class CandidateController extends Controller
                    'description' => $request->description,
                    'image'       => $globalFunImg['filaName'],
                ]);
+               Toastr::success('Post added successfully :)','Success');
                return redirect()->back()->with('msg','data submit successfully');  
            }else {
             return redirect()->back()->with('msg','File extention not matching, please try jpeg or jpg or png extension');  
