@@ -1,3 +1,4 @@
+//= image preview before upload
 function previewFile(input){
     var file = $("input[type=file]").get(0).files[0];
 
@@ -11,7 +12,10 @@ function previewFile(input){
         reader.readAsDataURL(file);
     }
 }
+//= image preview before upload
 
+
+//= global delete function
 
 $(document).on('click', '#destroy', function(e) {
     e.preventDefault();
@@ -46,3 +50,10 @@ $(document).on('click', '#destroy', function(e) {
             }
         });
 });
+//= global delete function
+
+//= toastr overwrite , close button
+// toastr.options = Object.assign({}, toastr.options, {
+//     closeButton: true
+// });
+//= toastr overwrite , close button
