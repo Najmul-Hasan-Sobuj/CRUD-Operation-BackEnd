@@ -75,6 +75,11 @@ class CandidateController extends Controller
                 return redirect()->back();
            }
         }else {
+            $messages = $validation->messages();
+            foreach ($messages->all() as $message)
+            {
+                Toastr::error($message, 'Failed', ['timeOut' => 10000]);
+            }
             return redirect()->back()->withErrors($validation);
         }
     }
@@ -161,6 +166,11 @@ class CandidateController extends Controller
             }
             
         }else {
+            $messages = $validation->messages();
+            foreach ($messages->all() as $message)
+            {
+                Toastr::error($message, 'Failed', ['timeOut' => 10000]);
+            }
             return redirect()->back()->withErrors($validation);
         }
     }

@@ -1,15 +1,6 @@
 @extends('layouts.master')
 @section('content')
         <div class="card-body">
-            {{-- error message --}}
-            @if ($errors->any())
-                @foreach ($errors->all() as $error)
-                <div class="alert alert-danger alert-styled-left alert-bordered">
-                    <button type="button" class="close btn-sm" data-dismiss="alert"><span>&times;</span><span class="sr-only">Close</span></button>
-                    <span class="text-semibold">Opps!</span> {{ $error }}.
-                </div>
-                @endforeach
-            @endif
             <form id="storeForm" action="{{ route('candidate.store') }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="row mb-4">
