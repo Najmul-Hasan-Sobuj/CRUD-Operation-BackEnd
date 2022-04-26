@@ -35,11 +35,11 @@
                             data-mdb-ripple-color="dark">
                             <span class="text-black">Home</span>
                         </a>
-                        <a href="gallery.html" class="btn bg-info btn-link btn-rounded btn-sm fw-bold float-start mx-2"
+                        <a href="{{ route('gallery') }}" class="btn bg-info btn-link btn-rounded btn-sm fw-bold float-start mx-2"
                             data-mdb-ripple-color="dark">
                             <span class="text-black">gallery</span>
                         </a>
-                        <a href="profile.html" class="btn bg-info btn-link btn-rounded btn-sm fw-bold float-start"
+                        <a href="{{ route('profile') }}" class="btn bg-info btn-link btn-rounded btn-sm fw-bold float-start"
                             data-mdb-ripple-color="dark">
                             <span class="text-black">Profile</span>
                         </a>

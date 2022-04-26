@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GalleryController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CandidateController;
 
 /*
@@ -24,6 +26,8 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('candidate',CandidateController::class);
+Route::get('gallery',[GalleryController::class,'galleryImage'])->name('gallery');
+Route::get('profile',[ProfileController::class,'profile'])->name('profile');
 
 
 
