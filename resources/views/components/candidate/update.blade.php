@@ -1,9 +1,6 @@
 @extends('layouts.master')
 @section('content')
         <div class="card-body">
-            @if(Session::has('msg'))
-            <p class="alert alert-info">{{ Session('msg') }}</p>
-            @endif
             <form id="updateForm" action="{{ route('candidate.update', [$candidates->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')

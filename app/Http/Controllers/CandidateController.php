@@ -8,7 +8,6 @@ use App\Models\Candidate;
 use Illuminate\Http\Request;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Support\Facades\File;
-use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Validator;
 
 class CandidateController extends Controller
@@ -21,7 +20,7 @@ class CandidateController extends Controller
     public function index()
     {
         $data['candidates'] = Candidate::paginate(4); 
-        return view('components.list', $data);
+        return view('components.candidate.list', $data);
     }
 
     /**
@@ -31,7 +30,7 @@ class CandidateController extends Controller
      */
     public function create()
     {
-        return view('components.create');
+        return view('components.candidate.create');
     }
 
     /**
@@ -92,7 +91,8 @@ class CandidateController extends Controller
      */
     public function show($id)
     {
-        //
+        $data['candidates'] = Candidate::find($id); 
+        return view('components.candidate.view', $data);
     }
 
     /**
@@ -104,7 +104,7 @@ class CandidateController extends Controller
     public function edit($id)
     {
         $data['candidates'] = Candidate::find($id); 
-        return view('components.update', $data);
+        return view('components.candidate.update', $data);
     }
 
     /**
@@ -161,7 +161,7 @@ class CandidateController extends Controller
                }
             } else {
                 $candidateInfo->update($insertData);
-                Toastr::success('Post added successfully');
+                Toastr::success('Post update successfully');
                 return redirect()->back(); 
             }
             

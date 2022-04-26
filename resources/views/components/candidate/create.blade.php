@@ -55,7 +55,7 @@
                     </div>
                     <div class="col-lg-4 ">
                         <div class="mb-4">
-                            <img id="previewImg" src="asset/image/view image.png" style="height: 250px; width: 100%;"
+                            <img id="previewImg" src="{{ asset('assets/image/view image.png') }}" style="height: 250px; width: 100%;"
                                 class="img-thumbnail" alt="view the image" />
                         </div>
                     </div>

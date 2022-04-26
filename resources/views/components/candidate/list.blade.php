@@ -30,7 +30,7 @@
                             </td>
                             <td>{{ $candidate->phone }}</td>
                             <td>
-                                <a href="view.html" ><i class="fa-solid fa-eye"></i></a>
+                                <a href="{{ route('candidate.show', [$candidate->id]) }}" ><i class="fa-solid fa-eye"></i></a>
                                 <a href="{{ route('candidate.edit', [$candidate->id]) }}" ><i class="fa-solid fa-pen-to-square"></i></a>
                                 <a id="destroy" href="{{ route('candidate.destroy', [$candidate->id]) }}" >@csrf <i class="fa-solid fa-trash"></i></a>
                             </td>
