@@ -54,7 +54,7 @@
                             <label class="form-label" for="description">Additional information</label>
                         </div>
                         <!-- Submit button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Place order</button>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Update</button>
                     </div>
                     <div class="col-lg-4 ">
                         <div class="mb-4">
