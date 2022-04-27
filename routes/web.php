@@ -23,14 +23,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::resource('candidate',CandidateController::class);
-Route::get('gallery',[GalleryController::class,'galleryImage'])->name('gallery');
-Route::get('profile',[ProfileController::class,'profile'])->name('profile');
-
-
-
-// Route::group(['middleware' => ['auth']], function () {
-
-// });
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('candidate',CandidateController::class);
+    Route::get('gallery',[GalleryController::class,'galleryImage'])->name('gallery');
+    Route::get('profile',[ProfileController::class,'profile'])->name('profile');
+});
