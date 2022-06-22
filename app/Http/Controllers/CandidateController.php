@@ -183,6 +183,10 @@ class CandidateController extends Controller
      */
     public function destroy($id)
     {
-        Candidate::find($id)->delete();
+        $candidate = Candidate::find($id);
+        File::delete(public_path('uploads/candidate/') . $candidate->image);
+        File::delete(public_path('uploads/candidate/thumb/') . $candidate->image);
+        // File::delete(public_path('global_assets/uploads/requestImg/') . $candidate->image);
+        $candidate->delete();
     }
 }
